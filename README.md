@@ -1,1 +1,151 @@
-# thejax112.github.io
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); color: var(--color-text-primary); }
+  .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 3rem 2rem; text-align: center; border-radius: var(--border-radius-lg); margin-bottom: 2rem; }
+  .hero h1 { font-size: 2.2rem; font-weight: 500; margin-bottom: 0.5rem; color: #fff; }
+  .hero .tagline { font-size: 1.1rem; color: #a0b4d0; margin-bottom: 1.5rem; }
+  .badge { display: inline-block; background: #2563eb22; border: 1px solid #3b82f6aa; color: #93c5fd; padding: 4px 14px; border-radius: 99px; font-size: 13px; margin-bottom: 1rem; }
+  .cta-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 1.5rem; }
+  .btn-primary { background: #2563eb; color: white; border: none; padding: 10px 24px; border-radius: var(--border-radius-md); font-size: 15px; cursor: pointer; font-weight: 500; }
+  .btn-outline { background: transparent; color: white; border: 1px solid #ffffff55; padding: 10px 24px; border-radius: var(--border-radius-md); font-size: 15px; cursor: pointer; }
+  .section-title { font-size: 1.3rem; font-weight: 500; margin-bottom: 0.25rem; color: var(--color-text-primary); }
+  .section-sub { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 1.5rem; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 2rem; }
+  .service-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem; text-align: center; }
+  .service-icon { width: 48px; height: 48px; border-radius: 12px; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; }
+  .service-card h3 { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+  .service-card p { font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
+  .price-tag { margin-top: 10px; font-size: 13px; font-weight: 500; color: #2563eb; }
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 2rem; }
+  .why-card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 1rem; }
+  .why-card .num { font-size: 1.6rem; font-weight: 500; color: #2563eb; }
+  .why-card .label { font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+  .why-card .desc { font-size: 13px; color: var(--color-text-primary); margin-top: 6px; }
+  .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 2rem; }
+  .testimonial { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem; }
+  .stars { color: #f59e0b; font-size: 14px; margin-bottom: 8px; }
+  .testimonial p { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 10px; }
+  .reviewer { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+  .contact-bar { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .contact-info { display: flex; flex-direction: column; gap: 4px; }
+  .contact-info .ci-label { font-size: 12px; color: var(--color-text-secondary); }
+  .contact-info .ci-val { font-size: 14px; font-weight: 500; }
+  .contact-items { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer { text-align: center; font-size: 12px; color: var(--color-text-secondary); margin-top: 2rem; padding-top: 1rem; border-top: 0.5px solid var(--color-border-tertiary); }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); margin-bottom: 1.25rem; }
+  .nav-logo { font-size: 16px; font-weight: 500; }
+  .nav-logo span { color: #2563eb; }
+  .nav-links { display: flex; gap: 20px; }
+  .nav-links a { font-size: 14px; color: var(--color-text-secondary); text-decoration: none; }
+  .nav-links a:hover { color: var(--color-text-primary); }
+  .section { margin-bottom: 2rem; }
+</style>
+
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Pixel Fix — Local tech repair business website demo</h2>
+
+<nav>
+  <div class="nav-logo">Pixel<span>Fix</span> Repair</div>
+  <div class="nav-links">
+    <a href="#">Services</a>
+    <a href="#">About</a>
+    <a href="#">Reviews</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="badge">Charlotte's friendly tech repair shop</div>
+  <h1>We fix it. Fast & fair.</h1>
+  <p class="tagline">Phones, laptops, game consoles — brought back to life by people who care.</p>
+  <div class="cta-row">
+    <button class="btn-primary" onclick="sendPrompt('Can you add a book a repair appointment form to the website?')">Book a repair ↗</button>
+    <button class="btn-outline">Get a free quote</button>
+  </div>
+</div>
+
+<div class="section">
+  <p class="section-title">Our services</p>
+  <p class="section-sub">No jargon, no surprises — just honest repairs at fair prices.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon" style="background:#eff6ff;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Phone repair</h3>
+      <p>Cracked screens, battery swaps, charging ports, water damage & more.</p>
+      <p class="price-tag">From $49</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon" style="background:#f0fdf4;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="1.8"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
+      </div>
+      <h3>Computer & laptop repair</h3>
+      <p>Slow PCs, broken keyboards, virus removal, upgrades & diagnostics.</p>
+      <p class="price-tag">From $59</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon" style="background:#fdf4ff;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="2"/><line x1="7" y1="21" x2="17" y2="21"/><line x1="12" y1="19" x2="12" y2="21"/></svg>
+      </div>
+      <h3>Game console repair</h3>
+      <p>PlayStation, Xbox, Nintendo Switch — HDMI ports, controllers, discs & more.</p>
+      <p class="price-tag">From $55</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <p class="section-title">Why people love us</p>
+  <p class="section-sub">Local, honest, and quick — the way a neighborhood shop should be.</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="num">Same day</div><div class="label">most common repairs</div><div class="desc">In by noon, out by 5 pm for most jobs.</div></div>
+    <div class="why-card"><div class="num">Free</div><div class="label">diagnostics</div><div class="desc">We'll tell you what's wrong before charging a thing.</div></div>
+    <div class="why-card"><div class="num">90-day</div><div class="label">warranty</div><div class="desc">Every repair is backed by our satisfaction promise.</div></div>
+    <div class="why-card"><div class="num">Local</div><div class="label">family-owned</div><div class="desc">Not a chain — real people who live in Charlotte.</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <p class="section-title">What our customers say</p>
+  <p class="section-sub">Real reviews from real neighbors.</p>
+  <div class="testimonials">
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>Dropped my phone in a puddle and thought it was toast. PixelFix had it working perfectly the same day. Incredible service!</p>
+      <div class="reviewer">— Sarah M., NoDa</div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>My laptop was running like molasses. They cleaned it up and swapped the battery in under 2 hours. Way cheaper than I expected.</p>
+      <div class="reviewer">— Daniel R., Plaza Midwood</div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>Fixed my PS5 HDMI port that two other shops said was unrepairable. These guys actually know their stuff!</p>
+      <div class="reviewer">— Kira T., Dilworth</div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-bar">
+  <div>
+    <p style="font-size:15px;font-weight:500;margin-bottom:4px;">Ready to get your device fixed?</p>
+    <p style="font-size:13px;color:var(--color-text-secondary);">Walk-ins welcome · Mon–Sat 9am–7pm</p>
+  </div>
+  <div class="contact-items">
+    <div class="contact-info">
+      <span class="ci-label">Call or text</span>
+      <span class="ci-val">(704) 555-0198</span>
+    </div>
+    <div class="contact-info">
+      <span class="ci-label">Email</span>
+      <span class="ci-val">hello@pixelfix.com</span>
+    </div>
+    <div class="contact-info">
+      <span class="ci-label">Location</span>
+      <span class="ci-val">Charlotte, NC</span>
+    </div>
+  </div>
+</div>
+
+<div class="footer">© 2026 PixelFix Repair · Charlotte, NC · Made with love for the community</div>
